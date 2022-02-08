@@ -107,36 +107,50 @@ measure_config = json.loads(measure_config_template)
 measure_config['parameter'][2]['value'] = measure_uuid
 
 
+print("Creating Library Resource on fhir server...")
 headers = {'Content-Type': "application/fhir+json"}
 resp = requests.post(f'{fhir_base_url}/Library', data=json.dumps(lib), headers=headers)
 print(resp)
 
+print("Creating Measure Resource on fhir server...")
 resp = requests.post(f'{fhir_base_url}/Measure', data=json.dumps(measure), headers=headers)
 print(resp)
 
 #resp = requests.get(f'{fhir_base_url}/Measure/$evaluate-measure?measure={measure_uuid}&periodStart=2000&periodEnd=2030')
 #print(resp.json())
 
+print("Evaluating Measure Resource on fhir server...")
 resp = requests.post(f'{fhir_base_url}/Measure/$evaluate-measure', data=json.dumps(measure_config), headers=headers)
+print(resp)
 
+print("Reading subject list, which resulted from the evaluation of the Measure")
 subject_list = resp.json()['group'][0]['population'][0]['subjectResults']['reference']
-print(subject_list)
+print("subject List is :", subject_list)
 
-
+print("Extracting subjects from subject list...")
 subjects = extract_subjects(requests.get(f'{fhir_base_url}/{subject_list}').json())
+print("---- BEGIN SUBJECT LIST ----")
+print(subjects)
+print("---- END SUBJECT LIST ----")
+
 
 
 headers = {'Content-Type': "application/x-www-form-urlencoded"}
+
+
+print("Search for feature = weight (http://loinc.org|29463-7) > 10 for all patients and count them...")
 payload = {'code': 'http://loinc.org|29463-7', 'value': 'gt10', '_summary': 'count'}
 resp = requests.post(f'{fhir_base_url}/Observation/_search', data=payload)
-print(resp.json()['total'])
+print("Number of patients found:", resp.json()['total'])
 
-headers = {'Content-Type': "application/x-www-form-urlencoded"}
+print("Search for feature = weight (http://loinc.org|29463-7) > 10 for our previously selected patients and count them...")
 payload = {'code': 'http://loinc.org|29463-7', 'value': 'gt10', 'subject': subjects, '_summary': 'count'}
 resp = requests.post(f'{fhir_base_url}/Observation/_search', data=payload)
-print(resp.json()['total'])
+print("Number of patients found:", resp.json()['total'])
 
-headers = {'Content-Type': "application/x-www-form-urlencoded"}
+print("Search for feature = weight (http://loinc.org|29463-7) > 10 for our previously selected patients and print found resources (features)...")
 payload = {'code': 'http://loinc.org|29463-7', 'value': 'gt10', 'subject': subjects}
 resp = requests.post(f'{fhir_base_url}/Observation/_search', data=payload)
+print("------------------------ BEGIN RESULT LIST ------------------------")
 print(resp.json())
+print("------------------------ END RESULT LIST ------------------------")
