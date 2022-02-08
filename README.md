@@ -7,7 +7,7 @@ To test this you will need docker and docker-compose and python3 installed on yo
 
 ## How to use
 
-Start up the blaze fhir server - `docker-compose up -d`
-Wait for the server to start up - you can check in your browser if it is started up - `http://localhost:8081/fhir/Patient`
-initialise the testdata - `bash init-testdata.sh`
-execute the example data extraction script - `python3 example-data-extraction.py`
+- Start up the blaze fhir server - `docker-compose up -d`
+- Wait for the server to start up - you can check in your browser if it is started up - `http://localhost:8081/fhir/Patient`
+- Initialise the testdata - `bash init-testdata.sh`
+- execute the example data extraction script - `python3 example-data-extraction.py`
