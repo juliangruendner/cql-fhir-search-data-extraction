@@ -1,0 +1,3910 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/gecco-bundle" ]
+  },
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32",
+    "resource": {
+      "resourceType": "Patient",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/Patient" ]
+      },
+      "extension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/age",
+        "extension": [ {
+          "url": "dateTimeOfDocumentation",
+          "_valueDateTime": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "unknown"
+            } ]
+          }
+        }, {
+          "url": "age",
+          "valueAge": {
+            "value": 93,
+            "unit": "years",
+            "system": "http://unitsofmeasure.org",
+            "code": "a"
+          }
+        } ]
+      }, {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/ethnic-group",
+        "valueCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "315280000"
+        }
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/patientId",
+        "value": "synthetic_patient_570154791",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "birthDate": "1928-04-01"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Patient",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/patientId|6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+    }
+  }, {
+    "fullUrl": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a",
+    "resource": {
+      "resourceType": "Organization",
+      "name": "Mein Krankenhaus"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=null|3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+    }
+  }, {
+    "fullUrl": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42",
+    "resource": {
+      "resourceType": "Encounter",
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/encounterId",
+        "value": "f7b486e1e24aaf510b3d4958d05ab2b51be3ccc47ae5b26faef0f086e0ad5335",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "unknown",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Encounter",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/encounterId|d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+    }
+  }, {
+    "fullUrl": "Condition/ebd095f888a9efe3e740051f44afe4a71c1c2c371dde1e96dc655abca26293c8",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/diagnosis-covid-19" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "6e42539efe58027e09631017e8975008ffd32aeeaa77c324fe0ad9bd0de0c52c"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394807007",
+          "display": "Infectious diseases (specialty) (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "840539006",
+          "display": "Disease caused by Severe acute respiratory syndrome coronavirus 2 (disorder)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "stage": [ {
+        "summary": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "255604002"
+          } ]
+        },
+        "type": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "88859-4"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|ebd095f888a9efe3e740051f44afe4a71c1c2c371dde1e96dc655abca26293c8"
+    }
+  }, {
+    "fullUrl": "Condition/d75a9906a053cf8f9cb976e12d32b8e7d63b6f981f62635192d88139ca3a316a",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "510bd8284857cb3071da112615a5fff897b260d857909b3da6a249ee6d6fe408"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "J45.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "195967001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|d75a9906a053cf8f9cb976e12d32b8e7d63b6f981f62635192d88139ca3a316a"
+    }
+  }, {
+    "fullUrl": "Condition/757e1f4f3f1743cbfa3ea6716a7acc45fd0fad02155c29db09420715a9f0c2d4",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "7b2678a71b66a575f7c5bcc512b909e4d168abdc8bb31a1245946b9816e833cd"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "J44.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "13645005"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|757e1f4f3f1743cbfa3ea6716a7acc45fd0fad02155c29db09420715a9f0c2d4"
+    }
+  }, {
+    "fullUrl": "Condition/cf67b0d6b542fac36e5faf4c22dc9ea27f59b6ae39c1179dcb2a1403cba68edc",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "7107ed73bb87a9b1e50a5680ef552cb5f6dfbe83440c34eef8d1bfdfbd84ce6f"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "J84.1"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "51615001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|cf67b0d6b542fac36e5faf4c22dc9ea27f59b6ae39c1179dcb2a1403cba68edc"
+    }
+  }, {
+    "fullUrl": "Condition/6b49e09fef857972bb655ec19697c3cb93af7b35ba49c8f57c8cbd45f5fe16bf",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "25a62b41ecd15435cbaa86cbd7f81a2aac0bab8ad61fddab27f3821f63f80ef0"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I27.0"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "70995007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|6b49e09fef857972bb655ec19697c3cb93af7b35ba49c8f57c8cbd45f5fe16bf"
+    }
+  }, {
+    "fullUrl": "Condition/3a8e2a6310e18277f24f9f4b767838cc4444702127a8ca07d65510420aaf0c1c",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "38e7ba73c2b26dcf3d234398965a0f3e71282141f81ff2c0f188f46469b5fefc"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "E66.29"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "190966007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|3a8e2a6310e18277f24f9f4b767838cc4444702127a8ca07d65510420aaf0c1c"
+    }
+  }, {
+    "fullUrl": "Condition/96a13292d58bb0476125fbbcb2d8511a6c8cab340c8a81e0fc46792eef9cee7c",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "94e2f4d30af80ebe988183e573358b0f1b0e60410b5b1153539eaedafcb99f29"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G47.3"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "73430006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|96a13292d58bb0476125fbbcb2d8511a6c8cab340c8a81e0fc46792eef9cee7c"
+    }
+  }, {
+    "fullUrl": "Condition/786e2307114ddfcad9fd8f10eaabd3cb35544b4508c94b9180f5c1506df7bf57",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "6d577a7ba3eee42ac8b57129d60f2f75eb55f844bebaabbe1762e088c86f5230"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G47.31"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "78275009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|786e2307114ddfcad9fd8f10eaabd3cb35544b4508c94b9180f5c1506df7bf57"
+    }
+  }, {
+    "fullUrl": "Condition/80f823eed35fa8e628173300404113841127929784f0087e178599b1a86dd921",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "2d63c51f5a8884a28fea7546bb149c5e6d179182d80adc32fe3ce9169b0dabf1"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "E84.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "190905008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|80f823eed35fa8e628173300404113841127929784f0087e178599b1a86dd921"
+    }
+  }, {
+    "fullUrl": "Condition/4aa59331ba34d45cc4e0053f70ba20bd186dc42009da550416e0b664182f6e66",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-lung-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "62fca0a2370c9a3f3b40d8464e3fce28e21028a57fd84560ed0efbc9034c8dae"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "418112009",
+          "display": "Pulmonary medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "106048009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|4aa59331ba34d45cc4e0053f70ba20bd186dc42009da550416e0b664182f6e66"
+    }
+  }, {
+    "fullUrl": "Condition/d6bcbc66468aca8d6aa5d957413e7b41a75f9f447f82adbfdeb146d9ba5a6096",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/human-immunodeficiency-virus-infection" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "688ea4373d28c543de4bfdf664a759f66dce25f09f4f7ed2ede824bcd07d5795"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394807007",
+          "display": "Infectious diseases (specialty) (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "B24"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "86406008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|d6bcbc66468aca8d6aa5d957413e7b41a75f9f447f82adbfdeb146d9ba5a6096"
+    }
+  }, {
+    "fullUrl": "Condition/eb2f11368d9ad5a31abc8fb89f9bc2f282da010e2a6f42722456e334f05ebded",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/diabetes-mellitus" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "154fc79a2ee41d1d2c9224ffd39d66297bbfc39ee8b24561a89a4d5cba03f3e4"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "408475000",
+          "display": "Diabetic medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "E14"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "73211009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|eb2f11368d9ad5a31abc8fb89f9bc2f282da010e2a6f42722456e334f05ebded"
+    }
+  }, {
+    "fullUrl": "Condition/a75416d55e3a6b214803042d492b9e069356b0cf87e00571a62d4a1e65fb0f4d",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/malignant-neoplastic-disease" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "6ffa37a80ece237d1b21131f345ab55990c91a8dae85a8de5cb336a860623e57"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394593009",
+          "display": "Medical oncology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "C80.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "363346000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|a75416d55e3a6b214803042d492b9e069356b0cf87e00571a62d4a1e65fb0f4d"
+    }
+  }, {
+    "fullUrl": "Condition/7b9c57287d1ed0255767a014cbf9c1cf9f7490df035a254d57ce57102ecc2f45",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/gastrointestinal-ulcers" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "afdce2c1fe8c990948836c5c2fa0758e92330f6b418090fa75bbd48579965abc"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394584008",
+          "display": "Gastroenterology (qualifier value))"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "K28"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "40845000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|7b9c57287d1ed0255767a014cbf9c1cf9f7490df035a254d57ce57102ecc2f45"
+    }
+  }, {
+    "fullUrl": "Procedure/4681bc9df7dc8455b9657d5cd45cf8541049f2ed22c19865babc79e731ed84a7",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/respiratory-therapies" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "cfe1bf18a60b17571fcf7397cba737611fd00ea9232ca1bbb185ccbfa3e21688"
+      } ],
+      "status": "in-progress",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "53950000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|4681bc9df7dc8455b9657d5cd45cf8541049f2ed22c19865babc79e731ed84a7"
+    }
+  }, {
+    "fullUrl": "Immunization/059b6b271f21f60993d5d6307cef1b8134516a123c30bc60395a6795c2ead7f7",
+    "resource": {
+      "resourceType": "Immunization",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/immunization" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId",
+        "value": "fb4c5ed4ca6f7a7b060deaa7c9cb41e24e9390ed4c3d639887b11147573cc6a5"
+      } ],
+      "status": "not-done",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "836398006"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_occurrenceDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "protocolApplied": [ {
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "16814004"
+          } ]
+        } ],
+        "_doseNumberString": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Immunization",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId|059b6b271f21f60993d5d6307cef1b8134516a123c30bc60395a6795c2ead7f7"
+    }
+  }, {
+    "fullUrl": "Immunization/edcc7655772b5a58847078bb06c98e2ae69df58455d6038ac804d3b5e06ce38c",
+    "resource": {
+      "resourceType": "Immunization",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/immunization" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId",
+        "value": "7e64fd7b1254f87ac9d1abf6934c82c48eadd5cb3bf44c703e75586fa16eceb7"
+      } ],
+      "status": "not-done",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "836402002"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_occurrenceDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "protocolApplied": [ {
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "56717001"
+          } ]
+        } ],
+        "_doseNumberString": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Immunization",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId|edcc7655772b5a58847078bb06c98e2ae69df58455d6038ac804d3b5e06ce38c"
+    }
+  }, {
+    "fullUrl": "Immunization/557d419dcce3cdecd4eb65ac9090a70092ff59e30cf9b6b8c621db3c84b5b987",
+    "resource": {
+      "resourceType": "Immunization",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/immunization" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId",
+        "value": "104de1f6ea1e86227ccb36c6833ead28a239f78dec431f42827a6efcbe1626fd"
+      } ],
+      "status": "completed",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "1119349007"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_occurrenceDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "protocolApplied": [ {
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "840539006"
+          } ]
+        } ],
+        "_doseNumberString": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Immunization",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId|557d419dcce3cdecd4eb65ac9090a70092ff59e30cf9b6b8c621db3c84b5b987"
+    }
+  }, {
+    "fullUrl": "Consent/fa7b8864adb98a7a30883a46057a5d3575f0eb45723361e829016f83f23a44e7",
+    "resource": {
+      "resourceType": "Consent",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/do-not-resuscitate-order" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/consentId",
+        "value": "cb7583c1a6c8f83f7fd56c32e6337f0ef32509301435caf9e8567f9642776224"
+      } ],
+      "status": "active",
+      "scope": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+          "code": "adr",
+          "display": "Advanced Care Directive"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+          "code": "dnr",
+          "display": "Do Not Resuscitate"
+        } ]
+      } ],
+      "patient": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "policy": [ {
+        "uri": "https://www.aerzteblatt.de/archiv/65440/DNR-Anordnungen-Das-fehlende-Bindeglied"
+      } ],
+      "provision": {
+        "code": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "304253006"
+          } ]
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Consent",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/consentId|fa7b8864adb98a7a30883a46057a5d3575f0eb45723361e829016f83f23a44e7"
+    }
+  }, {
+    "fullUrl": "Observation/5144a886760eb592814028e3078608f35ca6498ec383fc8fd1c9727c9bb3cf9a",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/sex-assigned-at-birth" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "0c37553061c62b0a78d43276c24bf2f2f011b14ecb65c0d10be947802daa6b8a"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "76689-9"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/gender-amtlich-de",
+          "code": "D"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|5144a886760eb592814028e3078608f35ca6498ec383fc8fd1c9727c9bb3cf9a"
+    }
+  }, {
+    "fullUrl": "Observation/00f25682f5af730a3fc5c5df03119d1729ab9bd06ec60f11a46709713adc1917",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/frailty-score" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "ef0fa587f1328ddd9691bba58506d7e6d8a06ae0ba00e03eb8b4cc4326c16f2f",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "763264000"
+        } ],
+        "text": "Frailty Scale Score"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score",
+          "code": "7"
+        } ]
+      },
+      "method": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "445414007",
+          "display": "Canadian Study of Health and Aging clinical frailty scale"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|00f25682f5af730a3fc5c5df03119d1729ab9bd06ec60f11a46709713adc1917"
+    }
+  }, {
+    "fullUrl": "Observation/8d058bd194435c2053aa57049913fcc548984abf2d7cc4932c83dbd92f88fb5f",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/body-weight" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "b7ee6a27ed21caa0caa2f32c9b13320d71792e1771264ee6f7a5c01ecbbb0359",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "29463-7"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "27113001"
+        } ],
+        "text": "Body Weight"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueQuantity": {
+        "value": 37,
+        "unit": "kilogram",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|8d058bd194435c2053aa57049913fcc548984abf2d7cc4932c83dbd92f88fb5f"
+    }
+  }, {
+    "fullUrl": "Observation/5790c7a39cd0f821a7bad1de404931c9dac1f52021e52b8c802493566272ad0c",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/known-exposure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "628b82c28c70899f49e6cae4f99a3933bf80315bcf63608f6a3431a7e650f519",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "88636-6"
+        } ],
+        "text": "Known exposure"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "840546002"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|5790c7a39cd0f821a7bad1de404931c9dac1f52021e52b8c802493566272ad0c"
+    }
+  }, {
+    "fullUrl": "Procedure/815565bfc5711ab8d87d4c314334f55535c44e622d9aaafb5665e58bd0bee360",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/dialysis" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "6f6cf1df2503971dc1cce477b726ae36e387d44e595e171b1224d5a71fda0ef6"
+      } ],
+      "status": "not-done",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "108241001"
+        } ],
+        "text": "Dialysis"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "not-performed"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|815565bfc5711ab8d87d4c314334f55535c44e622d9aaafb5665e58bd0bee360"
+    }
+  }, {
+    "fullUrl": "Procedure/b29cf9b2701d014cf7ce1f0191518712222a0714f2f8ab988ed2c94864cc564d",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/prone-position" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "92f2ec652e5ec0d4336cae16c7f4134e05bdd70768413853860b7da344f2e91b"
+      } ],
+      "status": "not-done",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "225287004",
+          "display": "Procedures relating to positioning and support (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "431182000"
+        } ],
+        "text": "Prone position"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "not-performed"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|b29cf9b2701d014cf7ce1f0191518712222a0714f2f8ab988ed2c94864cc564d"
+    }
+  }, {
+    "fullUrl": "Procedure/8c3c1d392aa12bb85d8834e77241f41e24df3da0ffecba296517af15037d69d2",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/respiratory-therapies" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "a6f43d9c2c7bb70ad5fcbed151da396c6ae135bcb4357ad425e0ea4ffc176ae5"
+      } ],
+      "status": "in-progress",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "371907003:425391005=426854004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "usedCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "426854004"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|8c3c1d392aa12bb85d8834e77241f41e24df3da0ffecba296517af15037d69d2"
+    }
+  }, {
+    "fullUrl": "Observation/c0f4b1001a64f23ad8f89266141954da2569b7cd542139301384542a0d81cff2",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/patient-in-icu" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "f5ddbdcec1618113c2f91b4f0378a47fb01d7bed4b92c8b07cb1cdedff9f7062"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "01",
+          "display": "Is the patient in the intensive care unit?"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373067005"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|c0f4b1001a64f23ad8f89266141954da2569b7cd542139301384542a0d81cff2"
+    }
+  }, {
+    "fullUrl": "Condition/cc805f2efc6ef2ca3c556c86858a67bd05377ac451beb2364e4ce4312046fbda",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/dependence-on-ventilator" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "99a7a6e493e68414079e2bf60a44cc5c7d31854aebff3d08716ba673c2a3485b"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "404989005",
+          "display": "Ventilation status (observable entity)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "444932008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|cc805f2efc6ef2ca3c556c86858a67bd05377ac451beb2364e4ce4312046fbda"
+    }
+  }, {
+    "fullUrl": "Observation/55df5fb80cef9005cff7f134ee0176f366be3359f3aa421909a58f0177728d5b",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/discharge-disposition" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "29933735f75df6e4e5ca673109d9bb242425420401820d37924c2a2a8ddefbc8",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "55128-3"
+        } ],
+        "text": "type of Discharge"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "419099009"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|55df5fb80cef9005cff7f134ee0176f366be3359f3aa421909a58f0177728d5b"
+    }
+  }, {
+    "fullUrl": "Observation/36fb8a0741307d6962067da74f9ccb8f01132ed4a47549bfb3d2e40dd42a2160",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/sars-cov-2-rt-pcr" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "26e5cf15502da42bd19e188e272a68125a97fb11412876b5ec0bc6b97e3393bf",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "94500-6"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "encounter": {
+        "reference": "Encounter/d9ee0efd9c309931c8793e2b60e81737c42f0f4592fbc86ec0064fefcf544b42"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "260415000"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|36fb8a0741307d6962067da74f9ccb8f01132ed4a47549bfb3d2e40dd42a2160"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/f2481cc11bbf98f54a1bd6f41ca36781f884bb0edcd2a9233fcbd0048afc2e96",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "27971e44f6a53d462b6c04ab12b41d3264e886c330df7e7546bcf3180448f578"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "41549009"
+        } ],
+        "text": "ACE inhibitors"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|f2481cc11bbf98f54a1bd6f41ca36781f884bb0edcd2a9233fcbd0048afc2e96"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/44e090d38d02eef48e0d613baf9f5e0c671ed3283081e217315af795f9291ceb",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b49152a5dd6302407f220d0b253b304638f55df2a4c8b84a6d3d6230a3d548d5"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "333710000"
+        } ],
+        "text": "immunoglobulins"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|44e090d38d02eef48e0d613baf9f5e0c671ed3283081e217315af795f9291ceb"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/794253c7ddda8a7604e4332dd2dc0cbb1a23a902aab9d4a70340fe4710913ba1",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b19be7b9c98d1e7afdf88cdc119a9b6c8377120f128da94cc1de8f9e56acd929"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB01"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB51"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|794253c7ddda8a7604e4332dd2dc0cbb1a23a902aab9d4a70340fe4710913ba1"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/fbcdb10c63a5edfd30cc238306282de9a0a8826734bf02048a29d326b11c987b",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "07247fe8765c6f8f333ca04b438e28bc8813f5fb45372ec7c084bcf38215c413"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB06"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|fbcdb10c63a5edfd30cc238306282de9a0a8826734bf02048a29d326b11c987b"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/f57bff533d151a95cb5d944ac37c536b9531fd314f7b3c56ad53beb5612e6675",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "e7213f172d89faa3e08d7c9c9fb31c8e812ce1f8338c7f04225c19dc2d085348"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AE03"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|f57bff533d151a95cb5d944ac37c536b9531fd314f7b3c56ad53beb5612e6675"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/902606290f890c059bb13a6d6df1d1ceecb3a5fe225cbf896d82999b5124304f",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "8dd24dc33205ba614e0966fe9519224e1838aaa153481a241293f640d6cf4664"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AC"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|902606290f890c059bb13a6d6df1d1ceecb3a5fe225cbf896d82999b5124304f"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/abcfbeddf677ada15f94f96f8f968446a2dbbb48b4e3ef272904d03aa1bfc045",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "0002859af780877da76fd0df7d90e497cefd067b0c1b1278c68215f4e55a4f4f"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB09"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|abcfbeddf677ada15f94f96f8f968446a2dbbb48b4e3ef272904d03aa1bfc045"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/9498fae66edd5ea769660533a60704ae5a048d70f02d2ccfccb8b248ac448edc",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "cf06f28f7bc4e49ebcf389707e2ba06e8c50499c1a7a4bddeec6734a526a306a"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AA04"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|9498fae66edd5ea769660533a60704ae5a048d70f02d2ccfccb8b248ac448edc"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/993d43c713cf9cabf36b23dfb01310e062b6e2888356b3b01c3ec88d4385f8fb",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "c8b9edd8bd66b318295517a84737b7f230565e66c1c8ec536a25377cc4707e9b"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AE"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|993d43c713cf9cabf36b23dfb01310e062b6e2888356b3b01c3ec88d4385f8fb"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/906abf3b43897efad12ccf91b254f37cfa2e67b325695b30cc6e93637e59486e",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "9f9323e6466c2513931daf4ca6abdd867480d010e734a59260694f876af89deb"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-08-30T14:02:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|906abf3b43897efad12ccf91b254f37cfa2e67b325695b30cc6e93637e59486e"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/a70f54c31fe69a8e69ad9d666a9a8a8a1a6190b324d3975c27d7679646af38ad",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "44fb590c54f2f8494f12083a8deb42a4289ea9410aafa47089d970d6e238ffb6"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "N02B"
+        }, {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "antipyretic"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|a70f54c31fe69a8e69ad9d666a9a8a8a1a6190b324d3975c27d7679646af38ad"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/790ee62553c61207c8ba1b9ca30c2e3046f38f276bf0040eeee2b4b741d92915",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "18e5eb326163ceb11ee25aaa9c651f0a1ec56afebe21a90ce6cd3ea18b0331c0"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "G01B"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "H02"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "M01BA"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "R03AK"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "S02B"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "R03AL"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "768759001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|790ee62553c61207c8ba1b9ca30c2e3046f38f276bf0040eeee2b4b741d92915"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/520cba6ee647e42d3e139b94cff28ea12dec0a63c342499b53d9c02c883bebd0",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "54eaa97849491538835481bae26361f4d8e2eb57fb2f0fc30d02d7b645057ace"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AE08"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AR15"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AR23"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "413591007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|520cba6ee647e42d3e139b94cff28ea12dec0a63c342499b53d9c02c883bebd0"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/983af7a975914a9e4a5829907e2248b68aa435d0ee77b6d18d366f23cb8f1136",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "387ccbb250c121c217ebea58b1c9fb00df70aac0fc3c3f5a24ead17fc7fa8fcb"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AR22"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AE10"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AR14"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "424096001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|983af7a975914a9e4a5829907e2248b68aa435d0ee77b6d18d366f23cb8f1136"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/e7d2a22b6431bc133ba323cfa4dcc2625e1d753294ab091d9e15af0fca812678",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "e70d5561b2228214b3778c1614e5c5f8cdc09fc743ebebdeedeb3397b50f9780"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "P01BA01"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "14728000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|e7d2a22b6431bc133ba323cfa4dcc2625e1d753294ab091d9e15af0fca812678"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/2acce2815b1a117d07607a5a4aa29bd076b5fc24280cc0b9e88c2bb0aec030ca",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "5e24164c0594e0b132a6fc6e122cb9d03b8921d9c8ffc913269948ea028f51e1"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "P01BA02"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "83490000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|2acce2815b1a117d07607a5a4aa29bd076b5fc24280cc0b9e88c2bb0aec030ca"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/3f8bc84a5ded2cc7f6cf00548089f35496653c747bd1230536292f043df99c93",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "d9967aa3cb22122e3fac801210b8bd9e016ed251dca51ea0afcf6b0df353e315"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "D11AX22"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "P02CF01"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "96138006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|3f8bc84a5ded2cc7f6cf00548089f35496653c747bd1230536292f043df99c93"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/11907dcdaf76e5527f473f797524eb0078c0d0a821bc65948d3c410ef0bac3ef",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "38db6a55695c3bb1112382536cd327a9aa9100fc29ef162a39dbfe9dd89e7fe0"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AR10"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "134573001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|11907dcdaf76e5527f473f797524eb0078c0d0a821bc65948d3c410ef0bac3ef"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/25105f910953197989b7c2211486ad0ca97d53e7001d158d9315930ba21402d4",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "a25798532afd2bf6663b84139e4030514d23be27764aa5c735f4785e3e59e611"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AB06"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "S01AD09"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "78025001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|25105f910953197989b7c2211486ad0ca97d53e7001d158d9315930ba21402d4"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/0a5032b1c6bc64fff7416a95d707c55a328703cb0c6cebebd18eefb02efb3926",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "27d03c93a93b63a8d876f300218100a1ab7a3a1fc7c616c3325c83cc9d64de25"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AH02"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "386142008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|0a5032b1c6bc64fff7416a95d707c55a328703cb0c6cebebd18eefb02efb3926"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/fcc00b209d6f6a13947637b2316208d8aa4c94f8148bcee24db74c4fb0a46a91",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "46c567eafa91f8312d2669cce77c7a12a5f5b460a11e55a4532182eb338e765d"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fdasis.nlm.nih.gov",
+          "code": "3QKI37EEHE"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "870518005"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|fcc00b209d6f6a13947637b2316208d8aa4c94f8148bcee24db74c4fb0a46a91"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/509d3bd859b61f3ab5b98079479b26711933b8336b047666cb8dbe1684d69571",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "c321b64240e5023cf72daf8641cc60ba88a7bc47633b3108c31943d4dee89193"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AP01"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "35063004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|509d3bd859b61f3ab5b98079479b26711933b8336b047666cb8dbe1684d69571"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/64f4f75f0693c35b7059cc5627c676f0a7190c09b714999be18813d3a5abf019",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "763c3e1472b32a238deb110b69d3af5625bab44c8180252e1ab17850800a3815"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B02AB04"
+        }, {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "camostat"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|64f4f75f0693c35b7059cc5627c676f0a7190c09b714999be18813d3a5abf019"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/ac3c483f981a256bdd2cafbcf0bc3af064bb8f91a04a87dea9add859a9badd46",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "2073fdac02d369e8b137961349edd464612461ecccf2dfc46f08204bf7ebf354"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "J05AX27"
+        }, {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "favipiravir"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|ac3c483f981a256bdd2cafbcf0bc3af064bb8f91a04a87dea9add859a9badd46"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/6f512208b41010f06c3f013e2bc1b7200a3e04f2a275bfe11bad93c9aa813ace",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "00c4a48da2871eec0e024e73451a7b5260703cff80d4fade6e4555390cd1128e"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9743"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9744"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9745"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9746"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9747"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9748"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9749"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9750"
+        }, {
+          "system": "urn:oid:2.16.840.1.113883.6.18.2.6",
+          "code": "E9752"
+        }, {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "convalescent-plasma"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|6f512208b41010f06c3f013e2bc1b7200a3e04f2a275bfe11bad93c9aa813ace"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/fe4151bc42dd524d7d86e504025867702afeed7d738d77b073309262e2dbdb73",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "d244219cf8cb830b3468277a517f083b1ccd927c2645ac25a70d183bbfbb6dcc"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "steroids-gt"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|fe4151bc42dd524d7d86e504025867702afeed7d738d77b073309262e2dbdb73"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/c0213fad060ca5b6c22df68b589d4deeed3acb26be27a408e56285629d1fb50f",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "e16fdd8768353f0e49826922b429171e47ddde0b98f8d945e409354b5ab3285b"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "steroids-lt"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|c0213fad060ca5b6c22df68b589d4deeed3acb26be27a408e56285629d1fb50f"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/1bcfeeb4b8e074714774444f7b8bc68f86209897fd29c2cba1e53e1185260622",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "7119a0d1c895923ad9ef0e84ba73dc3e862884badb36e7fff4a9117c4fe7a5d9"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-005.m"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-005.n"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AC07"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "444649004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|1bcfeeb4b8e074714774444f7b8bc68f86209897fd29c2cba1e53e1185260622"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/f97abb685844f0238a6227ce73b0a8a76d5d9c7cdfe208f9c19e88d3b9c619fb",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b1d43e9047d8c8b374a98c6cc7afc4ef9b6ecd5f5fc94f46e052e9bcb1c33627"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-00a.g"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AC14"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "763522001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|f97abb685844f0238a6227ce73b0a8a76d5d9c7cdfe208f9c19e88d3b9c619fb"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/856a6ec5e90cb6d7449ad5d09f525a8f5561e797f9e94bd75910ab31db5123e2",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "7d78d0c16efa31adf40bdaebc3d01dd288ecf11a7fb902b0181cafff83cb4ff7"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-005.8"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-004.e"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L01XE10"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "S01XA18"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L01XE18"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AA18"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AA10"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "D11AH01"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AD"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AB"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "416587008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|856a6ec5e90cb6d7449ad5d09f525a8f5561e797f9e94bd75910ab31db5123e2"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/97f34a329bc90155c0829781d1301638d16e69f3d4f40a9bfdc6b72b978ed8dc",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "89dab725cfbad5444c028fc40f4d109cfcea01f2d0cd588fa197749c4d2338c1"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-001.d"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-002.b"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-005.7"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-005.2"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-001.e"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "416897008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|97f34a329bc90155c0829781d1301638d16e69f3d4f40a9bfdc6b72b978ed8dc"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/af6df8d0709d5e3f9c620f393b28d385da7cb830af36f227a8f1734350d04296",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b52afc8db315a643d8d8e47dd12e10d63465f118b34eee9bdbd69f4d23ec1823"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-006.7"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "L04AC"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "430817009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|af6df8d0709d5e3f9c620f393b28d385da7cb830af36f227a8f1734350d04296"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/9bde9cc881e6cc59e9dba62e5ad251958fdc8ebf8ad4e0b1cdc4a9726f67bca9",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "9ee09c7edb71fc7a6587e32dfd57d1b924b7c83e8c43771ed48e8c94c28dd8be"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/ops",
+          "code": "6-009.4"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "703779004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|9bde9cc881e6cc59e9dba62e5ad251958fdc8ebf8ad4e0b1cdc4a9726f67bca9"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/cae0582bebc6de9aa21c443c275cc14a98d6d5d9c858a8e62aa2f90547839d2e",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "2d119b1c8c924df1c94105cef1e97c43290d060e64b595bd230d90f91fb52e41"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "M04AC01"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "73133000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|cae0582bebc6de9aa21c443c275cc14a98d6d5d9c858a8e62aa2f90547839d2e"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/2d2d5f13ed571f74c803b075fe2d047b0ed609ead40c9ba22012ebc7e56b04fa",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "57292afc561db18e497db933ebb1c1c05da14cda8a59ee0e74d340a8a30c7bfd"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "A11CC06"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "88519001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|2d2d5f13ed571f74c803b075fe2d047b0ed609ead40c9ba22012ebc7e56b04fa"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/0787a775b2636d24aeed29c18c615e47b58948e8e4b60d4fc44d941ff8534edc",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "6f7e2904009f10ce3af7267f23c5ce0e5724f8b613e86d32af4e88eaebe01efd"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "A12CB"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "764877006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|0787a775b2636d24aeed29c18c615e47b58948e8e4b60d4fc44d941ff8534edc"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/2665780f6d1363dbe67c7e6bc6dccf42b443d50778c7d0ea407d09c238ae3890",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "5c622e6e99615255fd15b3a1f390ced2c92f40c2f5d3244e4a773619d59c1acb"
+      } ],
+      "status": "stopped",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "41549009"
+        } ],
+        "text": "ACE inhibitors"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|2665780f6d1363dbe67c7e6bc6dccf42b443d50778c7d0ea407d09c238ae3890"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/409df5deadc6734a522584e5dd9c5488e7a8635d3d965207ebcea0fd65d420ad",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "33eb2c4a5e689d04364bb29340b128c4b21ba59cd26cbb8e574c30706725f436"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "333710000"
+        } ],
+        "text": "immunoglobulins"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|409df5deadc6734a522584e5dd9c5488e7a8635d3d965207ebcea0fd65d420ad"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/1788858ece9af054e997470767c88686ef81389320e9403db523bcaf72460d7d",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "67782ae32d82c7f01de37988742f66375ebc2d1eea88b4105f145d649863cbbe"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB01"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB51"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|1788858ece9af054e997470767c88686ef81389320e9403db523bcaf72460d7d"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/c52fbe4148f37c28fa21f43ea00f87d943898f03cca5c0d80477ed5b0659f686",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "44151358449860b9a1435c43605c69f185370bbc0354a109cab6599c1f57dd16"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB06"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|c52fbe4148f37c28fa21f43ea00f87d943898f03cca5c0d80477ed5b0659f686"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/198c98bec9a14ffe525d1a6f8ab3a0372d93ca3f0e680d5722373b6014cc5342",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "cfa90b2afe93db624c5a7b27f42bb805fb31b6f64d9683f85a085d6188b2fe6c"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AE03"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|198c98bec9a14ffe525d1a6f8ab3a0372d93ca3f0e680d5722373b6014cc5342"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/3e378ec43bd10a79e2667d70f89e5aa12e0fe30c2a758e9d62e27b6774986420",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "9b621520aadd42f3365faa7de16a65475dad205ebb8db2f111b605dfd4c72da3"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AC"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|3e378ec43bd10a79e2667d70f89e5aa12e0fe30c2a758e9d62e27b6774986420"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/f036b69c453a9b2506d92cffc653f0094338fc55568b8e8992fb78857f1ad894",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "62adf6aaa5ab22d8fb5b2133958d732242d7b2b9cfb00a671baab93ec3ccea1d"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB09"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|f036b69c453a9b2506d92cffc653f0094338fc55568b8e8992fb78857f1ad894"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/ef1ff39ed4ad51536e8061a1d2911c671e829c92ee78e77d6def505905fbdbff",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "72ae514574ae8bc51ea0095eddde4dfadf0015910a0183b832fbae14bab5193b"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AA04"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|ef1ff39ed4ad51536e8061a1d2911c671e829c92ee78e77d6def505905fbdbff"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/4db137c784e53cb46b306fd2a5ac826681bdcebf8305d56587408ec38e1beb99",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b3097d8ca4e6dddd8c2a66668598391e9411b1ad5ae418ec565c9b7996bbdf64"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AE"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AF"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|4db137c784e53cb46b306fd2a5ac826681bdcebf8305d56587408ec38e1beb99"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/2dec03b479a334451d81e45bc2c1decc4df4ba0241071969f84aeb963cc439eb",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "ccba869d274b0dae74c1a528fdcf47a365827ac9c002386c50353dcb0cd85088"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "385432009",
+          "display": "Not applicable (qualifier value)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-03-14T12:25:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|2dec03b479a334451d81e45bc2c1decc4df4ba0241071969f84aeb963cc439eb"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/7228c658c63f958c191ba3be72c166606e1b11b556ef21b1ff1f6923cd1cb381",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "e65943860925761f19a3abb36b37e24ff6df14a538af9acfbd164d485ce87f60"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "41549009"
+        } ],
+        "text": "ACE inhibitors"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|7228c658c63f958c191ba3be72c166606e1b11b556ef21b1ff1f6923cd1cb381"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/f715c1937e2ba1f02eb25f12d0bfc8e0cffbb64d57a2d38c7046b2f2b66141b9",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "d0191951a4c7b03428b3a3f6f1362779ece5fef21e315da9da7ee98358e41cbb"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "333710000"
+        } ],
+        "text": "immunoglobulins"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|f715c1937e2ba1f02eb25f12d0bfc8e0cffbb64d57a2d38c7046b2f2b66141b9"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/09f1aff505cba64786d864c441ab89f11c6cdbdb46b8fed1584897cbbf210b63",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "1e728a9f02ca6f9a67868a11e9e0bc0b031d196c255921b258b356a698ac3280"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB01"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|09f1aff505cba64786d864c441ab89f11c6cdbdb46b8fed1584897cbbf210b63"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/3c5d2f3cd273d879fef294f1ca0121c8ef69d2edcb719bc8fc131a3a65b86fe6",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "296b7b606d0edc6b7e44b5af8efb545dddd7d4f937744766a69d7c15335cf286"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB07"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|3c5d2f3cd273d879fef294f1ca0121c8ef69d2edcb719bc8fc131a3a65b86fe6"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/a865aeb24457300c6bc9f4e69b4142dd3716394c760c6075ecd790422c782179",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "ba39190d98fd054d70a4f76b786340924c44ef570e68683c6995776eceaa0a5b"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AE03"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|a865aeb24457300c6bc9f4e69b4142dd3716394c760c6075ecd790422c782179"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/e1fdf4586ac754f23a9f77f35b95f2f47ceb0a690497a0cc602b42653416e678",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "71b0bcb2d625992ef3dbb96d4c5026a33e519546b47192e122a15fcad5968fa6"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AC"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|e1fdf4586ac754f23a9f77f35b95f2f47ceb0a690497a0cc602b42653416e678"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/d42a92c4513c6f258b8ae2a1a1e9dd1547fa1b9df52826d3e7287f1016f783a0",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "d520d8b4a94227bb81cea489844a5ef9bda75eafa69684a822f2e9a46cf7277a"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AB09"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|d42a92c4513c6f258b8ae2a1a1e9dd1547fa1b9df52826d3e7287f1016f783a0"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/082cdb782d52afbad7908d9dce6cd643e1b377535ec1570e1d72084d1a3443e9",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "924e0e23b10342b098e151a8088a14c4a389c6b2c708c2838ec472236a1e05c1"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AA04"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|082cdb782d52afbad7908d9dce6cd643e1b377535ec1570e1d72084d1a3443e9"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/7e140d90bcec9a41b07d3f976d455bb930a910eb73f104470a2af4e913288483",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "9152f0bf2f27df321f96836a943e9a5d72ad9bf8f6205183a6643278ff7f53d3"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AE"
+        }, {
+          "system": "http://fhir.de/CodeSystem/dimdi/atc",
+          "code": "B01AF"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|7e140d90bcec9a41b07d3f976d455bb930a910eb73f104470a2af4e913288483"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/08618f2f96bd721bdf3b8391af34ab706a5e1be5c8864de5aaafb8c9b0f29619",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy-anticoagulants" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "0fd4dfb837898c869d74ef49e938ae81e6749f59285439920fed21788285e970"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "81839001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "effectiveDateTime": "2020-11-18T03:39:00+00:00",
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373808002",
+          "display": "Curative - procedure intent (qualifier value)"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|08618f2f96bd721bdf3b8391af34ab706a5e1be5c8864de5aaafb8c9b0f29619"
+    }
+  }, {
+    "fullUrl": "Observation/002d2953a12a5bec4d4544254c849ba2f7d564f8ec2bf0561dae7296bfc35c32",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/study-inclusion-covid-19" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "b05aa6aaa6b9b5a0b2c2825a58ebda4104b4ad40b3ebd8e18f3c021afa90c668",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "02",
+          "display": "Study inclusion due to Covid-19"
+        } ],
+        "text": "Confirmed Covid-19 diagnosis as main reason for enrolment in the study"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373066001"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|002d2953a12a5bec4d4544254c849ba2f7d564f8ec2bf0561dae7296bfc35c32"
+    }
+  }, {
+    "fullUrl": "Observation/2048551bd24295b0d0198fd50e07718375f3c940bb813a9aef9675a325c078d7",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/interventional-clinical-trial-participation" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "6cecb8e9cc6e4d9643f7a52a367b4f3a408e46ceffd0f14d8c5bbacc202e3401",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "03",
+          "display": "Participation in interventional clinical trials"
+        } ],
+        "text": "Has the patient participated in one or more interventional clinical trials?"
+      },
+      "subject": {
+        "reference": "Patient/6507e9b138af98fe89ab92a68ad66e32fffebffb3d8538ce57e71c769af8ef32"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "261665006"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|2048551bd24295b0d0198fd50e07718375f3c940bb813a9aef9675a325c078d7"
+    }
+  } ]
+}

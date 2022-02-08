@@ -1,0 +1,4937 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/gecco-bundle" ]
+  },
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d",
+    "resource": {
+      "resourceType": "Patient",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/Patient" ]
+      },
+      "extension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/age",
+        "extension": [ {
+          "url": "dateTimeOfDocumentation",
+          "_valueDateTime": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+              "valueCode": "unknown"
+            } ]
+          }
+        }, {
+          "url": "age",
+          "valueAge": {
+            "value": 60,
+            "unit": "years",
+            "system": "http://unitsofmeasure.org",
+            "code": "a"
+          }
+        } ]
+      }, {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/ethnic-group",
+        "valueCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "90027003"
+        }
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/patientId",
+        "value": "synthetic_patient_283512667",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "birthDate": "1960-06-22"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Patient",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/patientId|a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+    }
+  }, {
+    "fullUrl": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a",
+    "resource": {
+      "resourceType": "Organization",
+      "name": "Mein Krankenhaus"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization",
+      "ifNoneExist": "identifier=null|3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+    }
+  }, {
+    "fullUrl": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e",
+    "resource": {
+      "resourceType": "Encounter",
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/encounterId",
+        "value": "37890d0b2fdf8d69e4c83d0ab2563ccd3d642e610c97631f0be68829ccd07129",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "unknown",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Encounter",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/encounterId|6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+    }
+  }, {
+    "fullUrl": "Condition/7f8d4dc001891e814b1572bd8380eced29e4aaf3f86931bc66db864d97bd50d3",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/diagnosis-covid-19" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "f6aaa69e9070b895025ec9aa4a6013c6863f8d606202c19e9bd31c6f911540c8"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394807007",
+          "display": "Infectious diseases (specialty) (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "840539006",
+          "display": "Disease caused by Severe acute respiratory syndrome coronavirus 2 (disorder)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "stage": [ {
+        "summary": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006"
+          } ]
+        },
+        "type": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "88859-4"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|7f8d4dc001891e814b1572bd8380eced29e4aaf3f86931bc66db864d97bd50d3"
+    }
+  }, {
+    "fullUrl": "Condition/f1f691adedd1fcd07b2ee29c1a5302ce4b6a0830034faeaf9c0cca683d3d69e5",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "317467e2c1f959a075f47804f823c23521e6adc6f44ac39546ed3464743f402b"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I10.90"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "38341003"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|f1f691adedd1fcd07b2ee29c1a5302ce4b6a0830034faeaf9c0cca683d3d69e5"
+    }
+  }, {
+    "fullUrl": "Condition/53f3b155e159258f2fa6cbcb53cf30743b617f96eba384bc1bd8534b6bbf29fc",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "096c6e3751db55d6e49f4f9eca3d6fa3ecf50a22839fc09d1fda30d3ab433ad5"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I25.29"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "417662000:246090004=22298006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|53f3b155e159258f2fa6cbcb53cf30743b617f96eba384bc1bd8534b6bbf29fc"
+    }
+  }, {
+    "fullUrl": "Condition/c1239cc2b6dd46da7efd10e270feaae535409d1a47013415dc1a93d0d00a0d47",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "d81365b12070ee776d9e0f26c7a5a56b905e09793e50dac6870dd8a63b815ecf"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I49.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "698247007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|c1239cc2b6dd46da7efd10e270feaae535409d1a47013415dc1a93d0d00a0d47"
+    }
+  }, {
+    "fullUrl": "Condition/e8eb2f4fd1c14394a457d80ae39b07fc765ba8d726a63dc39c8a292780449f8a",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "a75ec1a50d02aaffbd351d45897e9c0265fb7e13614bcaaf7957f4def807110f"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I50.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "84114007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|e8eb2f4fd1c14394a457d80ae39b07fc765ba8d726a63dc39c8a292780449f8a"
+    }
+  }, {
+    "fullUrl": "Condition/13754fc15c2811579ea853c64113ee398300c3b64031220b9643c7ef8a5b79a2",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "c5c0d5dcc08f4576b0fb1baf6e9ff70555e30f5dfd62f658a22477730c6f86ab"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I73.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "399957001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|13754fc15c2811579ea853c64113ee398300c3b64031220b9643c7ef8a5b79a2"
+    }
+  }, {
+    "fullUrl": "Condition/00f1dd872514d7e05eb546e646c100e93808da9045c8fb2d861ea10c3b75753f",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "2b09dd3604c9e0176a05f2878132d565b8356ef17273cb0e0c333c439686a873"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "Z95.5"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "416940007:363589002=81266008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|00f1dd872514d7e05eb546e646c100e93808da9045c8fb2d861ea10c3b75753f"
+    }
+  }, {
+    "fullUrl": "Condition/9cd24945f02b0ce937d69200f7863dc02678109d6d8e39b33c917aaf74d855ab",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "43f8a8066676f5d87e728c5e8ce2d627e8d2aec5555d898d87d0167040b52601"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I25.1"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "53741008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|9cd24945f02b0ce937d69200f7863dc02678109d6d8e39b33c917aaf74d855ab"
+    }
+  }, {
+    "fullUrl": "Condition/f035cd99755856df53489bed340129445e2b383df6a8eb56e631df19f2ed48cc",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/cardiovascular-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "f0dc56c15a664741a25b952eb9c3e0135a742ccd84d6323aef5a23bf9b876ca4"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "722414000",
+          "display": "Vascular medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I51.6"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "49601007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|f035cd99755856df53489bed340129445e2b383df6a8eb56e631df19f2ed48cc"
+    }
+  }, {
+    "fullUrl": "Condition/6837ff45c6c39a100851968333e1a87e30e4c62154ae6265bb2bc2cb7575ca4d",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/rheumatological-immunological-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "499a90e8a743da6761691b2ebe110655117138fdcc86e8659509da4b5eb642fe"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394810000",
+          "display": "Rheumatology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "K52.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "24526004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|6837ff45c6c39a100851968333e1a87e30e4c62154ae6265bb2bc2cb7575ca4d"
+    }
+  }, {
+    "fullUrl": "Condition/ece636e805833e74b754f39b06c0fc4c8e63df6462628244dada36d68d61aa00",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/rheumatological-immunological-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "071654707c0f522f698ea56f25e98d52436bd5335173b80b8eba18211037eb63"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394810000",
+          "display": "Rheumatology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "M06.99"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "69896004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|ece636e805833e74b754f39b06c0fc4c8e63df6462628244dada36d68d61aa00"
+    }
+  }, {
+    "fullUrl": "Condition/942afddcd030899f57d3f19c09064e6fbb22022f90bb906141573c9f90179cd0",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/rheumatological-immunological-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "b74b78e045690a757a151ff81cfac6cf8bf0b15cbf7792fa7c2abd8b7cbe1ccf"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394810000",
+          "display": "Rheumatology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "M35.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "105969002"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|942afddcd030899f57d3f19c09064e6fbb22022f90bb906141573c9f90179cd0"
+    }
+  }, {
+    "fullUrl": "Condition/f5d8be5351a8f85cc56cbde4db88ed0753bc40c259b5bdb8263c41d4f4d49dda",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/rheumatological-immunological-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "7279e492a0d78e83fdc4adcf164100c8ec1a2c15a7d7217a8517627c0313eecc"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394810000",
+          "display": "Rheumatology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I77.6"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "31996006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|f5d8be5351a8f85cc56cbde4db88ed0753bc40c259b5bdb8263c41d4f4d49dda"
+    }
+  }, {
+    "fullUrl": "Condition/8bae4a604f72605319f098cd8e9295b9a885bc4113e0b8083915fe5d46b42ad2",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/rheumatological-immunological-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "b052a5c7356bc6acc8a4579c924237346472ce6705546c929b7b508c02222062"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394810000",
+          "display": "Rheumatology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "D84.8"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "36138009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|8bae4a604f72605319f098cd8e9295b9a885bc4113e0b8083915fe5d46b42ad2"
+    }
+  }, {
+    "fullUrl": "Condition/f04e2614468dbcb0b592ce70aca2eae40866f0a2811b7b4a0ab41f8078859095",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/rheumatological-immunological-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "951ae4b46daa180094c68da24c733c86d6dbc47dadbe69e156544f661da0139e"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394810000",
+          "display": "Rheumatology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "D84.8"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "396332003+414029004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|f04e2614468dbcb0b592ce70aca2eae40866f0a2811b7b4a0ab41f8078859095"
+    }
+  }, {
+    "fullUrl": "Condition/5cedc357692488884e102f67f35cf583834aacf755e0a2486bdce94ff3183cf2",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/human-immunodeficiency-virus-infection" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "03d3475656b43cc88b19f62b054b8d816cfb34b995d2722434933952c03e648e"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394807007",
+          "display": "Infectious diseases (specialty) (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "B24"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "86406008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|5cedc357692488884e102f67f35cf583834aacf755e0a2486bdce94ff3183cf2"
+    }
+  }, {
+    "fullUrl": "Condition/f004819c272fc4ab552574284d86b4b9f471025feda9430717049a2147a018e2",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/diabetes-mellitus" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "860d3e1615479752c7ec5c3f548898ac33d0330c4971ce2fda94142217772538"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "408475000",
+          "display": "Diabetic medicine (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "237599002"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|f004819c272fc4ab552574284d86b4b9f471025feda9430717049a2147a018e2"
+    }
+  }, {
+    "fullUrl": "Condition/1d4bec90f964489bd6d99957a5e046c15fe7e9734bf4b8c28e99b00ee4489e93",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/malignant-neoplastic-disease" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "1452859938d3e22e4b159967b503917e10fd9d639532d039ce7dfb0c8ff23260"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394593009",
+          "display": "Medical oncology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "C80.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "363346000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|1d4bec90f964489bd6d99957a5e046c15fe7e9734bf4b8c28e99b00ee4489e93"
+    }
+  }, {
+    "fullUrl": "Condition/72edd350751338b6b3044c88e695f3214560e43a18dc17620b873910243dba7e",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "7b6ee8c94daade3da9e6694cf02665f1aed6ac9f33652301dce91ffb859c102c"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G20"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "49049000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|72edd350751338b6b3044c88e695f3214560e43a18dc17620b873910243dba7e"
+    }
+  }, {
+    "fullUrl": "Condition/ee58985909b31cf907ca78ad8e84de08df983c4be20adc2882d7f28faed6fdc1",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "c04529d549a50ac1b3da6c07d15a0637ff84f736d9ebc34bb98f8c197edaa555"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "F03"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "52448006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|ee58985909b31cf907ca78ad8e84de08df983c4be20adc2882d7f28faed6fdc1"
+    }
+  }, {
+    "fullUrl": "Condition/5ba5ef21c7d2f6d72922e562db7ef72ba983fa403f56464eaed4a753ca1b8873",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "fc9668d9d9ea6441bcd1addea9176696d642d58d6d15edd4bf0482f0f8e3df70"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G35"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "24700007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|5ba5ef21c7d2f6d72922e562db7ef72ba983fa403f56464eaed4a753ca1b8873"
+    }
+  }, {
+    "fullUrl": "Condition/51f83a523884bc75d002e0c9d3caae1765522f04b3cd615391ff892524723a75",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "5ad51cb9218904ef4b6fb079951eb317e4839a44aaa7fab6febfb6ecab032c6c"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G70.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "257277002"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|51f83a523884bc75d002e0c9d3caae1765522f04b3cd615391ff892524723a75"
+    }
+  }, {
+    "fullUrl": "Condition/ec81acc84a10f6df4362def4f9d5b04ce75ead40970cf4ff7eb67fc2b5904ae3",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "9cc168da35d9510a1854a84793c1d1ec1ce12c6d9fed08e07ae84d7df51234c9"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G40.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "84757009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|ec81acc84a10f6df4362def4f9d5b04ce75ead40970cf4ff7eb67fc2b5904ae3"
+    }
+  }, {
+    "fullUrl": "Condition/0e6555a6d57588c350c8206eb7f51ea94dfd155a13a9c1d06e0a52c59d88c66c",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "d533e412c9296ee7d42184631b2977e0bb5cd9fbeefa20bfd2b91b7b799039e6"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "G43.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "37796009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|0e6555a6d57588c350c8206eb7f51ea94dfd155a13a9c1d06e0a52c59d88c66c"
+    }
+  }, {
+    "fullUrl": "Condition/34d42a472bf89cce2aaf795a6dccd2e9ca7bde14205fd93453c3baf8ef414a3e",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "7626557031e50c4d7963485295c11fb30ab06ea820ef840f9773cc257f8df243"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "confirmed",
+          "display": "Confirmed"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410605003",
+          "display": "Confirmed present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "I69.4"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "440140008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|34d42a472bf89cce2aaf795a6dccd2e9ca7bde14205fd93453c3baf8ef414a3e"
+    }
+  }, {
+    "fullUrl": "Condition/cd6fba7b4e4456b1687d4c6e365b62999c18d283782505fdcd8ce72d1026f047",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "e44c99661027e555a923d9f9a9e3c4a70d3138e228e075290d5b9ce4144289eb"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "Z86.7"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "429993008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|cd6fba7b4e4456b1687d4c6e365b62999c18d283782505fdcd8ce72d1026f047"
+    }
+  }, {
+    "fullUrl": "Condition/8d2c46ba3993dedc2307a4485faf13131c14923327e9474378fd27badb5b29e8",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "13c269c6ea1978c5897269f6063d021bd36a10178ac044c59422bdc7860cf53d"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "F29"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "69322001"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|8d2c46ba3993dedc2307a4485faf13131c14923327e9474378fd27badb5b29e8"
+    }
+  }, {
+    "fullUrl": "Condition/9b7f14064ba1d049b224af45ecae4381352b733f5ae973daf6050c41ef653524",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "84d7f8f68b9f0a8c7d066cb9c952245cfdc58d91c9b0c12158853142cd9f59c4"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "F32.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "35489007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|9b7f14064ba1d049b224af45ecae4381352b733f5ae973daf6050c41ef653524"
+    }
+  }, {
+    "fullUrl": "Condition/b06cdb3852d0dcbf8470476955f13f66a97076c3e609bd43628e626f5b6a8c89",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-neurological-mental-diseases" ]
+      },
+      "modifierExtension": [ {
+        "url": "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/uncertainty-of-presence",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          } ],
+          "text": "Presence unknown."
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "c4f7cd72a2884fa2760b9b931cd4323f4a868c63028b69d783a75c47313c69c1"
+      } ],
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394591006",
+          "display": "Neurology (qualifier value)"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "F41.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "197480006"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|b06cdb3852d0dcbf8470476955f13f66a97076c3e609bd43628e626f5b6a8c89"
+    }
+  }, {
+    "fullUrl": "Condition/c34f28dbb209eb7dd270f70233e85672e54837f9fa738c481ba5d14ee4f02171",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/chronic-kidney-diseases" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "36a21ba18615f1aef933482c80e77de4d00c3f36f84a8088b6fbd0c6daf95168"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394589003",
+          "display": "Nephrology (qualifier value)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "N18.9"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "709044004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|c34f28dbb209eb7dd270f70233e85672e54837f9fa738c481ba5d14ee4f02171"
+    }
+  }, {
+    "fullUrl": "Condition/7251b99a411315c0639f84979e14d27cbba30a463828fe12a76ce70e8eddb7a2",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/gastrointestinal-ulcers" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "2059d4565f25334e498e51ea1958ba91e15b70a057fdd416654e58ad37cbdf62"
+      } ],
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "394584008",
+          "display": "Gastroenterology (qualifier value))"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+          "version": "2021",
+          "code": "K28"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "40845000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|7251b99a411315c0639f84979e14d27cbba30a463828fe12a76ce70e8eddb7a2"
+    }
+  }, {
+    "fullUrl": "Observation/ae3f5bfa2a7d897dcb5cc7d950c1a4c5a94f7ca79d912518e67ca27ec428fcce",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/smoking-status" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "5e1e97ec7b325d43d7da920a2cff5b3eb48ad73eed76e32ad297b3f77a9e4acb"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "72166-2"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA18976-3"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|ae3f5bfa2a7d897dcb5cc7d950c1a4c5a94f7ca79d912518e67ca27ec428fcce"
+    }
+  }, {
+    "fullUrl": "Procedure/2bbc64b7f014230bbab03337bd67a62225bb2c8f7fc38ee23ba328d42b89d3ec",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/respiratory-therapies" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "c7cf0c68ff57e06dd92897b45fb4ce377cc26afdf91c54b1a6c59e65765d3f0a"
+      } ],
+      "status": "in-progress",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "53950000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|2bbc64b7f014230bbab03337bd67a62225bb2c8f7fc38ee23ba328d42b89d3ec"
+    }
+  }, {
+    "fullUrl": "Immunization/0dc11c9f49103092a0f8345c970747839f988525ce52f87d587dfee6959bbfd7",
+    "resource": {
+      "resourceType": "Immunization",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/immunization" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId",
+        "value": "2d397e1205beba6f4683fafaee6408cf96cc143d554ce44781ab44eae7067e84"
+      } ],
+      "status": "completed",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "836398006"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "occurrenceDateTime": "2020-05-23",
+      "protocolApplied": [ {
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "16814004"
+          } ]
+        } ],
+        "_doseNumberString": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Immunization",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId|0dc11c9f49103092a0f8345c970747839f988525ce52f87d587dfee6959bbfd7"
+    }
+  }, {
+    "fullUrl": "Immunization/ac3f7117d0895112673f366c4ecef48f77d36f051e8430a2db3cb62388cecd70",
+    "resource": {
+      "resourceType": "Immunization",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/immunization" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId",
+        "value": "f2d50ea4495b8054cddbb01fe25f31cbaf77f36c67bdadb0d41c935b4561f58d"
+      } ],
+      "status": "completed",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "836402002"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "occurrenceDateTime": "2020-08-06",
+      "protocolApplied": [ {
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "56717001"
+          } ]
+        } ],
+        "_doseNumberString": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Immunization",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId|ac3f7117d0895112673f366c4ecef48f77d36f051e8430a2db3cb62388cecd70"
+    }
+  }, {
+    "fullUrl": "Immunization/6e2b43909bf2c4144c60afe71359d7a5a18d5ec773b9b621f60be03577ad0f6d",
+    "resource": {
+      "resourceType": "Immunization",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/immunization" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId",
+        "value": "bfc1b1d7677d3a089eda5e038e38d7730f57d94ea39dd88628b5fc8fdff5789e"
+      } ],
+      "status": "completed",
+      "vaccineCode": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips",
+          "code": "no-known-immunizations",
+          "display": "vaccineCode unknown"
+        } ]
+      },
+      "patient": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "occurrenceDateTime": "2020-05-18",
+      "protocolApplied": [ {
+        "targetDisease": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "64572001"
+          } ],
+          "text": "<Freitext>"
+        } ],
+        "_doseNumberString": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Immunization",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/immunizationId|6e2b43909bf2c4144c60afe71359d7a5a18d5ec773b9b621f60be03577ad0f6d"
+    }
+  }, {
+    "fullUrl": "Consent/fec233e3714c950987bfc8ae1f21586cd7837a18f621b083770db176a0438d0d",
+    "resource": {
+      "resourceType": "Consent",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/do-not-resuscitate-order" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/consentId",
+        "value": "3217a72fa787b19edc76a2f6dd3a034adeaa942ce63973198e60b4b4e765b0b2"
+      } ],
+      "status": "active",
+      "scope": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+          "code": "adr",
+          "display": "Advanced Care Directive"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+          "code": "dnr",
+          "display": "Do Not Resuscitate"
+        } ]
+      } ],
+      "patient": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "policy": [ {
+        "uri": "https://www.aerzteblatt.de/archiv/65440/DNR-Anordnungen-Das-fehlende-Bindeglied"
+      } ],
+      "provision": {
+        "code": [ {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "261665006"
+          } ]
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Consent",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/consentId|fec233e3714c950987bfc8ae1f21586cd7837a18f621b083770db176a0438d0d"
+    }
+  }, {
+    "fullUrl": "DiagnosticReport/65d9a544cffce62195f1cfcb153f5e12a73a53e270a8bc143e8c0490b5f68327",
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/diagnostic-report-radiology" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/diagnosticreportId",
+        "value": "b6976ec21b8d1e3ba37b3de0c4e88cbf33ac27fcbb3345844f1bd8bc8e2ea2e7"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "18726-0",
+          "display": "Radiology studies (set)"
+        }, {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "RAD",
+          "display": "Radiology"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "conclusionCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "118247008:{363713009=263654008,42752001=840539006}"
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "DiagnosticReport",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/diagnosticreportId|65d9a544cffce62195f1cfcb153f5e12a73a53e270a8bc143e8c0490b5f68327"
+    }
+  }, {
+    "fullUrl": "Procedure/b83fc981c05ca488260c6fef9c0402a4a1cc83456fb460f3eff263a4bae0a4ea",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/radiology-procedures" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "456daa5b915456ff5cdee114467c8681d5accd05faabc13f1e47b093dcab72fd"
+      } ],
+      "status": "completed",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "103693007",
+          "display": "Diagnostic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "US"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "16310003:363704007=39607008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "bodySite": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "39607008",
+          "display": "Lung structure (body structure)"
+        } ]
+      } ],
+      "report": [ {
+        "reference": "DiagnosticReport/65d9a544cffce62195f1cfcb153f5e12a73a53e270a8bc143e8c0490b5f68327"
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|b83fc981c05ca488260c6fef9c0402a4a1cc83456fb460f3eff263a4bae0a4ea"
+    }
+  }, {
+    "fullUrl": "Observation/023c895b1114962b57f7f9c4c5ff636d8655a46798d0b28c14f92a2cdbddf8d3",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pregnancy-status" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "49029c5591204e776a36c07cb3f326c9774d68a5959b2c6b2a51131bc7fcb1a3",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "82810-3"
+        } ],
+        "text": "Pregnancy status"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA15173-0"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "77386006"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|023c895b1114962b57f7f9c4c5ff636d8655a46798d0b28c14f92a2cdbddf8d3"
+    }
+  }, {
+    "fullUrl": "Observation/c52c3f758917339f7cb2c4487a0b912ab60128a1e09defeb96213a22cef0fede",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/sex-assigned-at-birth" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "b3b18f2bed363e176da3b520131ba3c0741402a822019f945ad9b2bf615caca9"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "76689-9"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/administrative-gender",
+          "code": "female"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|c52c3f758917339f7cb2c4487a0b912ab60128a1e09defeb96213a22cef0fede"
+    }
+  }, {
+    "fullUrl": "Observation/e4fc7b7d3d3b0287b70ab849838d8bfdabd4c7203c0b19ca0d7ed2125fad27ef",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/frailty-score" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "20ab48fab754d1f3c882ef7b693623ccb2595f23b3e9e75afa86f5b916b5f49f",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "763264000"
+        } ],
+        "text": "Frailty Scale Score"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score",
+          "code": "5"
+        } ]
+      },
+      "method": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "445414007",
+          "display": "Canadian Study of Health and Aging clinical frailty scale"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|e4fc7b7d3d3b0287b70ab849838d8bfdabd4c7203c0b19ca0d7ed2125fad27ef"
+    }
+  }, {
+    "fullUrl": "Observation/c70e17c88b1efb02861927bdf450401c9eee1437f0b9a273cf4d8250752dcc7a",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/body-weight" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "abe7ac152685b4783ce59c2c2bc8d6565b89fe05f5c46d1c5c9135438668a0e1",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "29463-7"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "27113001"
+        } ],
+        "text": "Body Weight"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueQuantity": {
+        "value": 50,
+        "unit": "kilogram",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|c70e17c88b1efb02861927bdf450401c9eee1437f0b9a273cf4d8250752dcc7a"
+    }
+  }, {
+    "fullUrl": "Observation/690c9ee82fc2aa98c08409190bb009a62e0c13eeb87e3d95ab7eb40ab8004609",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/body-height" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "cf8f7f021bcc31b1670ecd98e64024fc29c1ee04985fb8ce81eed0cee03dad08",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8302-2"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "50373000"
+        } ],
+        "text": "Body height"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueQuantity": {
+        "value": 133,
+        "unit": "centimeter",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|690c9ee82fc2aa98c08409190bb009a62e0c13eeb87e3d95ab7eb40ab8004609"
+    }
+  }, {
+    "fullUrl": "Observation/1c28c2c92086d85be0e6fb072c59f62d3e5a5394686a345c0216296a86749972",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/known-exposure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "baf999585c9931c3213171ab677552bf4fda50dcea17af80bb39e45c169f5da1",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "social-history",
+          "display": "Social History"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "88636-6"
+        } ],
+        "text": "Known exposure"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "dataAbsentReason": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+          "code": "unknown",
+          "display": "Unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|1c28c2c92086d85be0e6fb072c59f62d3e5a5394686a345c0216296a86749972"
+    }
+  }, {
+    "fullUrl": "Procedure/6cc5ee44b852ce81117f8664b20bf6dc33b7667212c4f5d6d1eb2d6dc878be38",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/dialysis" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "dee93e035b5e650ec1711afece5674b25d7efb15cd7caffedc0a2ed37bfed8a1"
+      } ],
+      "status": "in-progress",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "108241001"
+        } ],
+        "text": "Dialysis"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|6cc5ee44b852ce81117f8664b20bf6dc33b7667212c4f5d6d1eb2d6dc878be38"
+    }
+  }, {
+    "fullUrl": "Procedure/88c878d9cd3ce2677f4756f0e9f98d441a6d675d28bf2602e9bd347357bd4053",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/apheresis" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "867c4941b184827e0051cce6ff0c1705db615f3e52131447acee7be9182fa9e8"
+      } ],
+      "status": "in-progress",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "127788007"
+        } ],
+        "text": "Apheresis"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|88c878d9cd3ce2677f4756f0e9f98d441a6d675d28bf2602e9bd347357bd4053"
+    }
+  }, {
+    "fullUrl": "Procedure/256562d3a3d2d852c6985147631f90838b794a4dcec99e444d4ce4eb67d293a7",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/prone-position" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "1cdb070cd536e9b6477a6869712cd76016f5eb4425d6af02603d0f353a877ef3"
+      } ],
+      "status": "not-done",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "225287004",
+          "display": "Procedures relating to positioning and support (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "431182000"
+        } ],
+        "text": "Prone position"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "not-performed"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|256562d3a3d2d852c6985147631f90838b794a4dcec99e444d4ce4eb67d293a7"
+    }
+  }, {
+    "fullUrl": "Procedure/0dfd96b424e02bea1d97cb63cc20b48fbae15f10484bebbba9ab139e50d94c6d",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/respiratory-therapies" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/procedureId",
+        "value": "0a106a69b00b2951a16186b35e876017ce7fffbe2eb89ce4800c87db41011c3e"
+      } ],
+      "status": "not-done",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "277132007",
+          "display": "Therapeutic procedure (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "40617009",
+          "display": "Artificial respiration (procedure)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_performedDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Procedure",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/procedureId|0dfd96b424e02bea1d97cb63cc20b48fbae15f10484bebbba9ab139e50d94c6d"
+    }
+  }, {
+    "fullUrl": "Observation/a21c47cc988dc426e5b3a52acb2341c919edee449739447f51b1900c8ebe9ba0",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/patient-in-icu" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "25aab210c6badb0d729aaff8b263980cdfd25adc1d343767600dc3ae5760b452"
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "01",
+          "display": "Is the patient in the intensive care unit?"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373067005"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|a21c47cc988dc426e5b3a52acb2341c919edee449739447f51b1900c8ebe9ba0"
+    }
+  }, {
+    "fullUrl": "Condition/c3bb76ec955ccce74a254389ee2848c9f9c85ba6337455a2ef200d2bef132ff6",
+    "resource": {
+      "resourceType": "Condition",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/dependence-on-ventilator" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/conditionId",
+        "value": "5f7ca47bdfe45864845e3840406322415fb8fc805c239642f756595b0590ac02"
+      } ],
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code": "refuted",
+          "display": "Refuted"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "410594000",
+          "display": "Definitely NOT present (qualifier value)"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "404989005",
+          "display": "Ventilation status (observable entity)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "444932008"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Condition",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/conditionId|c3bb76ec955ccce74a254389ee2848c9f9c85ba6337455a2ef200d2bef132ff6"
+    }
+  }, {
+    "fullUrl": "Observation/8d17e209d91627b7f06876426a127c33ecee258b83a4a02986783e2fd04744e2",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/sars-cov-2-rt-pcr" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "8f6e1b195f62c48026f7e77bb92c5df2940758ddc6bd88d9a1d8d2f3528fd41a",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "94500-6"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "260373001"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|8d17e209d91627b7f06876426a127c33ecee258b83a4a02986783e2fd04744e2"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/eca193707d29f7fd32e1c03577e44a85ae2943f950c17422d188cf546790b6d7",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "e4b0cb49e1f5205b64ed0f38c3774ff8a64d0fdf6d316f1d4cbb69aa5f92f339"
+      } ],
+      "status": "stopped",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "41549009"
+        } ],
+        "text": "ACE inhibitors"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "effectiveDateTime": "2020-08-16T12:28:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|eca193707d29f7fd32e1c03577e44a85ae2943f950c17422d188cf546790b6d7"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/cd9bd35e491ba7582e0b801ac57cdccc473856f78aecd0adc704c45834470f1b",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b54995f73e502ee91c4e366a89e6b93d680d84d9cdd4dd6b6dd081fbc6355cd0"
+      } ],
+      "status": "not-taken",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "333710000"
+        } ],
+        "text": "immunoglobulins"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "effectiveDateTime": "2020-08-16T12:28:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|cd9bd35e491ba7582e0b801ac57cdccc473856f78aecd0adc704c45834470f1b"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/f3f360469f9773f54729928aa014f67cb46ed89d36b106227513f8d6b6e8afd7",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "25ed5a0677bd2c7593c3289354dfbebdd79c74292863818dd643735810dd62ab"
+      } ],
+      "status": "active",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "41549009"
+        } ],
+        "text": "ACE inhibitors"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "effectiveDateTime": "2020-01-22T19:16:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|f3f360469f9773f54729928aa014f67cb46ed89d36b106227513f8d6b6e8afd7"
+    }
+  }, {
+    "fullUrl": "MedicationStatement/ba7456bab8b51871a8d80f8eb3c968c89548722f915d192825f60b29fbeb96a6",
+    "resource": {
+      "resourceType": "MedicationStatement",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pharmacological-therapy" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId",
+        "value": "b669da629b22cbd799a8095748180ab6205504ea41e265b2c7256d67d5485559"
+      } ],
+      "status": "unknown",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "333710000"
+        } ],
+        "text": "immunoglobulins"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "effectiveDateTime": "2020-01-22T19:16:00+00:00"
+    },
+    "request": {
+      "method": "POST",
+      "url": "MedicationStatement",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/medicationstatementId|ba7456bab8b51871a8d80f8eb3c968c89548722f915d192825f60b29fbeb96a6"
+    }
+  }, {
+    "fullUrl": "Observation/41176e2aa1891035312199675466796e2c93e15d4bbb16bd2ae852c87e765e8f",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/carbon-dioxide-partial-pressure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "0c4caa3ac83f4ddc3449ff0445f4e284afb026da89fd01d179487f004c853d37",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11557-6"
+        } ],
+        "text": "Carbon dioxide [Partial pressure] in blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 182,
+        "unit": "mmHg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|41176e2aa1891035312199675466796e2c93e15d4bbb16bd2ae852c87e765e8f"
+    }
+  }, {
+    "fullUrl": "Observation/7b4830b08bbd889c316179169373ea25c2891ae653d963ddb2f8ecebbd048d38",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/oxygen-partial-pressure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "e671ebe5c5a70bfa107b6d9bfac426e0713323b23cc21aadd9ee86d2a4a63c2e",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11557-8"
+        } ],
+        "text": "Oxygen [Partial pressure] in blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 70,
+        "unit": "mmHg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|7b4830b08bbd889c316179169373ea25c2891ae653d963ddb2f8ecebbd048d38"
+    }
+  }, {
+    "fullUrl": "Observation/1b614a95fb24330e7a710dbc52cc8d4c53ea2c7f7f46af226cb137d433bb6435",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/inhaled-oxygen-concentration" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "db625b900d3c9b1b0615ed54425053a8c2788eb690eadb32dad1f330051c89a4",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "3150-0"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "250774007"
+        } ],
+        "text": "Oxygen [Partial pressure] in blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 27.776913977123073,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|1b614a95fb24330e7a710dbc52cc8d4c53ea2c7f7f46af226cb137d433bb6435"
+    }
+  }, {
+    "fullUrl": "Observation/50a2bfe06405b6a4658992dd522527e02ee8826ead5a410543b2e922bbf0e82a",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pH" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "cc5306208a91520c2ff33a7477af0521894446438761d42b7d65be037947680c",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11558-4"
+        } ],
+        "text": "pH of Blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 0.854535262697381,
+        "unit": "pH",
+        "system": "http://unitsofmeasure.org",
+        "code": "[pH]"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|50a2bfe06405b6a4658992dd522527e02ee8826ead5a410543b2e922bbf0e82a"
+    }
+  }, {
+    "fullUrl": "Observation/282f358130174f2c56d218f54235b3675f33a646ed2b0a31e1a3ce07c1d9de99",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/sofa-score" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "a22446edb879dc915bbf1dbca4ea9d4307170b40dca764c461cb4032dd05f7ac",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "06",
+          "display": "SOFA-Score"
+        } ],
+        "text": "Sepsis-related organ failure assessment score"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueInteger": 6,
+      "component": [ {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "resp",
+            "display": "Respiratory system"
+          } ],
+          "text": "SOFA Respiratory system scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "resp1",
+            "display": "Respiratory system SOFA score 1"
+          } ],
+          "text": "PaO2/FiO2 [mmHg (kPa)] < 400 (53.3)"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "ns",
+            "display": "Nervous system"
+          } ],
+          "text": "SOFA Nervous system scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "ns3",
+            "display": "Nervous system SOFA score 3"
+          } ],
+          "text": "Glasgow Coma Scale (GCS) 6-9"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "kid",
+            "display": "Kidneys"
+          } ],
+          "text": "SOFA Kidneys scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "kid0",
+            "display": "Kidneys SOFA score 0"
+          } ],
+          "text": "Creatinine (mg/dl) [umol/L] (or urine output) < 1.2 [< 110]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "cvs",
+            "display": "Cardiovascular system"
+          } ],
+          "text": "SOFA Cardiovascular system scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "cvs0",
+            "display": "Cardiovascular system SOFA score 0"
+          } ],
+          "text": "Mean arterial pressure (definitions) ≥ 70 mmHg"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "liv",
+            "display": "Liver"
+          } ],
+          "text": "SOFA Liver scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "liv2",
+            "display": "Liver SOFA score 2"
+          } ],
+          "text": "Bilirubin (mg/dl) [umol/L] 2.0-5.9 [33-101]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "coa",
+            "display": "Coagulation"
+          } ],
+          "text": "SOFA Coagulation scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "coa0",
+            "display": "Coagulation SOFA score 0"
+          } ],
+          "text": "Platelets×10^3/ul ? 150"
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|282f358130174f2c56d218f54235b3675f33a646ed2b0a31e1a3ce07c1d9de99"
+    }
+  }, {
+    "fullUrl": "Observation/da63f9c6a588510fa43247c0cd3040975aa7d38c57c60a33ffd76e91f9cea27d",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/respiratory-rate" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "28486b8affba74ca009f92b0b6c4d65758f8f47f7d6e06ee088b2b8b6b41cec5",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "9279-1"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "86290005"
+        } ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 80,
+        "unit": "per minute",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|da63f9c6a588510fa43247c0cd3040975aa7d38c57c60a33ffd76e91f9cea27d"
+    }
+  }, {
+    "fullUrl": "Observation/93247e40d4e76604e575572f80c7dd825d3fd7ad7de472d7a02342257b8be655",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/blood-pressure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "40a64a6edc5d3364d35ffeff65db4221bc970132433d26f0da069d0b9f2d4390",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "75367002",
+          "display": "Blood pressure (observable entity)"
+        } ],
+        "text": "Blood pressure"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "component": [ {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8480-6"
+          }, {
+            "system": "http://snomed.info/sct",
+            "code": "271649006"
+          } ],
+          "text": "Systolic blood pressure"
+        },
+        "valueQuantity": {
+          "value": 47,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4"
+          }, {
+            "system": "http://snomed.info/sct",
+            "code": "271650006"
+          } ],
+          "text": "Diastolic blood pressure"
+        },
+        "valueQuantity": {
+          "value": 166,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|93247e40d4e76604e575572f80c7dd825d3fd7ad7de472d7a02342257b8be655"
+    }
+  }, {
+    "fullUrl": "Observation/2de254d4d61e004471a6775d1b3237d090dd9fede554af75689a3a5e3023a42b",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/heart-rate" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "4bd4b629e4747bcbd85146191c47b05d2db445e018574857443d2a166950a685",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8867-4"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "364075005"
+        } ],
+        "text": "Heart rate"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 100,
+        "unit": "per minute",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|2de254d4d61e004471a6775d1b3237d090dd9fede554af75689a3a5e3023a42b"
+    }
+  }, {
+    "fullUrl": "Observation/a10630b9aa5ee45f36195ac6884565494868fd8c790d4f2b168b716d41614708",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/body-temperature" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "8aae01f73015af4960f0d504ef0dd36b10e0ae59553f7bce9f14d15ba4965092",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8310-5"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "386725007"
+        } ],
+        "text": "Body temperature"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 28.531118246590882,
+        "unit": "°C",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|a10630b9aa5ee45f36195ac6884565494868fd8c790d4f2b168b716d41614708"
+    }
+  }, {
+    "fullUrl": "Observation/7e764a6d7fd85576a6b3502e52539ac6a419eca850dda29d014519c9b929e3e5",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/oxygen-saturation" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "9920e41b04731a7e9ec9112f8ed8088f982460f3d64fc8e8887255ae807d39ea",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "2708-6"
+        }, {
+          "system": "http://loinc.org",
+          "code": "59408-5"
+        }, {
+          "system": "http://loinc.org",
+          "code": "20564-1"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "431314004"
+        } ],
+        "text": "Oxygen saturation in Arterial blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-04-22T12:59:00+00:00",
+      "valueQuantity": {
+        "value": 87,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|7e764a6d7fd85576a6b3502e52539ac6a419eca850dda29d014519c9b929e3e5"
+    }
+  }, {
+    "fullUrl": "Observation/f57282a7a572ba310f27ea9e467106091eb8c1b1e1ab090803e3bd15e17b5eb4",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/carbon-dioxide-partial-pressure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "c2dce18d28d5794646fa8b676139b3c5d195589f37f2cd5cf6c76db4b4b27e55",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11557-6"
+        } ],
+        "text": "Carbon dioxide [Partial pressure] in blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 104,
+        "unit": "mmHg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|f57282a7a572ba310f27ea9e467106091eb8c1b1e1ab090803e3bd15e17b5eb4"
+    }
+  }, {
+    "fullUrl": "Observation/66ec76f0bdba60e5c0b820b820638d7cdcce084428c693d05f6bb3ed6310613e",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/oxygen-partial-pressure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "aa006dc95c3c8e71589fbf15d15366105c69b6e1c9fad3a09dcc01471904b3a4",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11557-8"
+        } ],
+        "text": "Oxygen [Partial pressure] in blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 195,
+        "unit": "mmHg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|66ec76f0bdba60e5c0b820b820638d7cdcce084428c693d05f6bb3ed6310613e"
+    }
+  }, {
+    "fullUrl": "Observation/752573f8d4821463b985d8b3237c2fa92fa2b64df56130d21e39ef5430f8e408",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/inhaled-oxygen-concentration" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "5679f6c2e66087eb2eb63dddf8372fb4c497e572a5b18cddeb63146a58b55a73",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "3150-0"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "250774007"
+        } ],
+        "text": "Oxygen [Partial pressure] in blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 41.10623514086272,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|752573f8d4821463b985d8b3237c2fa92fa2b64df56130d21e39ef5430f8e408"
+    }
+  }, {
+    "fullUrl": "Observation/e9e682aae975ebdb8c6bc80b5ab1aa9a7d94e4d5e15ad27e6c6a9b4e34bd9c98",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/pH" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "f8a76e75b2583d6ffc9a0a2e83ca8a814291c5136a8491b74c577c413bc8d909",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }, {
+          "system": "http://loinc.org",
+          "code": "26436-6",
+          "display": "Laboratory studies (set)"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18767-4",
+          "display": "Blood gas studies (set)"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11558-4"
+        } ],
+        "text": "pH of Blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 11.694447980984748,
+        "unit": "pH",
+        "system": "http://unitsofmeasure.org",
+        "code": "[pH]"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|e9e682aae975ebdb8c6bc80b5ab1aa9a7d94e4d5e15ad27e6c6a9b4e34bd9c98"
+    }
+  }, {
+    "fullUrl": "Observation/3bd8c6903390538e5f2e94cb4a78969b9a6c6cd1ca652e24d61c4364661c4c16",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/sofa-score" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "d8395d15f72b5d7f5d2160b22abbf6121da568a18ab5cef645c9578ea63d951f",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "06",
+          "display": "SOFA-Score"
+        } ],
+        "text": "Sepsis-related organ failure assessment score"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueInteger": 11,
+      "component": [ {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "resp",
+            "display": "Respiratory system"
+          } ],
+          "text": "SOFA Respiratory system scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "resp2",
+            "display": "Respiratory system SOFA score 2"
+          } ],
+          "text": "PaO2/FiO2 [mmHg (kPa)] < 300 (40)"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "ns",
+            "display": "Nervous system"
+          } ],
+          "text": "SOFA Nervous system scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "ns4",
+            "display": "Nervous system SOFA score 4"
+          } ],
+          "text": "Glasgow Coma Scale (GCS) < 6"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "kid",
+            "display": "Kidneys"
+          } ],
+          "text": "SOFA Kidneys scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "kid0",
+            "display": "Kidneys SOFA score 0"
+          } ],
+          "text": "Creatinine (mg/dl) [umol/L] (or urine output) < 1.2 [< 110]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "cvs",
+            "display": "Cardiovascular system"
+          } ],
+          "text": "SOFA Cardiovascular system scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "cvs1",
+            "display": "Cardiovascular system SOFA score 1"
+          } ],
+          "text": "Mean arterial pressure (definitions) < 70 mmHg"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "liv",
+            "display": "Liver"
+          } ],
+          "text": "SOFA Liver scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "liv3",
+            "display": "Liver SOFA score 3"
+          } ],
+          "text": "Bilirubin (mg/dl) [umol/L] 6.0-11.9 [102-204]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "coa",
+            "display": "Coagulation"
+          } ],
+          "text": "SOFA Coagulation scoring category"
+        },
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/sofa-score",
+            "code": "coa1",
+            "display": "Coagulation SOFA score 1"
+          } ],
+          "text": "Platelets×10^3/ul < 150"
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|3bd8c6903390538e5f2e94cb4a78969b9a6c6cd1ca652e24d61c4364661c4c16"
+    }
+  }, {
+    "fullUrl": "Observation/d168bd0d56edc8dbbfb55a7e51ba457aac52555af0c89399323b4993829e8892",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/respiratory-rate" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "d8675386a6a63f1c9817073a14df35ec0878490cf3eba87df1005325983808f1",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "9279-1"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "86290005"
+        } ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 22,
+        "unit": "per minute",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|d168bd0d56edc8dbbfb55a7e51ba457aac52555af0c89399323b4993829e8892"
+    }
+  }, {
+    "fullUrl": "Observation/0f4e7e0670d964dc7032eb70a0655c2dc9207ea1050c6707621e7afcc50344ce",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/blood-pressure" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "22df0f33ea53de5e5b6a2c82131edcdc477c4f145911a90ad67dead468400c51",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "75367002",
+          "display": "Blood pressure (observable entity)"
+        } ],
+        "text": "Blood pressure"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "component": [ {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8480-6"
+          }, {
+            "system": "http://snomed.info/sct",
+            "code": "271649006"
+          } ],
+          "text": "Systolic blood pressure"
+        },
+        "valueQuantity": {
+          "value": 220,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4"
+          }, {
+            "system": "http://snomed.info/sct",
+            "code": "271650006"
+          } ],
+          "text": "Diastolic blood pressure"
+        },
+        "valueQuantity": {
+          "value": 143,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|0f4e7e0670d964dc7032eb70a0655c2dc9207ea1050c6707621e7afcc50344ce"
+    }
+  }, {
+    "fullUrl": "Observation/44c0e6ba5b88522cef79cf7e15ffb026938268e78fd4a9adfacad58cd5511f9d",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/heart-rate" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "f5f8f9e601c2dfc4fe0b0262192f119cbad30dc48fb0d16e57e56a89e53a9bea",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8867-4"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "364075005"
+        } ],
+        "text": "Heart rate"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 77,
+        "unit": "per minute",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|44c0e6ba5b88522cef79cf7e15ffb026938268e78fd4a9adfacad58cd5511f9d"
+    }
+  }, {
+    "fullUrl": "Observation/6a294941b0b8c54e67dc511c927322b5b9388bdd2cc01dbaa9cf0f5298a12b34",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/body-temperature" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "9fb6b43bf1e50fac6d627ae94ceff72d708e824cd8d1e5dac192b758db77eb2f",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8310-5"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "386725007"
+        } ],
+        "text": "Body temperature"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 30.23113142191493,
+        "unit": "°C",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|6a294941b0b8c54e67dc511c927322b5b9388bdd2cc01dbaa9cf0f5298a12b34"
+    }
+  }, {
+    "fullUrl": "Observation/87fffe88338a721a3156191bcbf6ca913e6034df237c5ea0e3be5138d856bc44",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/oxygen-saturation" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "ffec9065678437ef87d3a1ca862030f68b886d3698d26b7615adc23fe41b3069",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "2708-6"
+        }, {
+          "system": "http://loinc.org",
+          "code": "59408-5"
+        }, {
+          "system": "http://loinc.org",
+          "code": "20564-1"
+        }, {
+          "system": "http://snomed.info/sct",
+          "code": "431314004"
+        } ],
+        "text": "Oxygen saturation in Arterial blood"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "encounter": {
+        "reference": "Encounter/6b05ac7e944c8b692842085a4c4d2494cccb0d9ee0582d7d895dfa67419b087e"
+      },
+      "effectiveDateTime": "2020-01-06T21:22:00+00:00",
+      "valueQuantity": {
+        "value": 7,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|87fffe88338a721a3156191bcbf6ca913e6034df237c5ea0e3be5138d856bc44"
+    }
+  }, {
+    "fullUrl": "Consent/1e4175517b502d7f3ded3e39168bdc69348714da86926baf1c71f0ecd70773ab",
+    "resource": {
+      "resourceType": "Consent",
+      "meta": {
+        "profile": [ "http://fhir.de/ConsentManagement/StructureDefinition/Consent" ]
+      },
+      "identifier": [ {
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/consentId",
+        "value": "d9cc4fb3fc19d8169a78e25c42b0748ce6f27a6335819e5c7655484108aa05af"
+      } ],
+      "status": "active",
+      "scope": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+          "code": "research",
+          "display": "Research Information Access"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "57016-8"
+        } ]
+      } ],
+      "patient": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "dateTime": "2020-07-18",
+      "organization": [ {
+        "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+      } ],
+      "policy": [ {
+        "uri": "https://www.medizininformatik-initiative.de/sites/default/files/2020-04/MII_AG-Consent_Einheitlicher-Mustertext_v1.6d.pdf"
+      } ],
+      "provision": {
+        "type": "deny",
+        "period": {
+          "start": "2020-07-18T00:00:00+00:00",
+          "end": "2050-07-18T00:00:00+00:00"
+        },
+        "provision": [ {
+          "period": {
+            "start": "2020-07-18T00:00:00+00:00",
+            "end": "2050-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.3",
+              "display": "gee_erhebung_verarbeitung"
+            } ]
+          } ]
+        }, {
+          "type": "deny",
+          "period": {
+            "start": "2015-07-18T00:00:00+00:00",
+            "end": "2020-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.8",
+              "display": "gee_krankenkassendaten_retro"
+            } ]
+          } ]
+        }, {
+          "type": "permit",
+          "period": {
+            "start": "2020-07-18T00:00:00+00:00",
+            "end": "2025-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.10",
+              "display": "gee_krankenkassendaten_pro"
+            } ]
+          } ]
+        }, {
+          "type": "permit",
+          "period": {
+            "start": "2020-07-18T00:00:00+00:00",
+            "end": "2050-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.13",
+              "display": "gee_biomaterialien"
+            } ]
+          } ]
+        }, {
+          "period": {
+            "start": "2020-07-18T00:00:00+00:00",
+            "end": "2050-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.33",
+              "display": "gee_biomaterialien_zusaetzlich"
+            } ]
+          } ]
+        }, {
+          "type": "permit",
+          "period": {
+            "start": "2020-07-18T00:00:00+00:00",
+            "end": "2050-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.19",
+              "display": "gee_kontaktaufnahme"
+            } ]
+          } ]
+        }, {
+          "period": {
+            "start": "2020-07-18T00:00:00+00:00",
+            "end": "2050-07-18T00:00:00+00:00"
+          },
+          "code": [ {
+            "coding": [ {
+              "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1",
+              "code": "2.16.840.1.113883.3.1937.777.24.5.1.24",
+              "display": "gee_kontaktaufnahme_zusatzbefunde"
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Consent",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/consentId|1e4175517b502d7f3ded3e39168bdc69348714da86926baf1c71f0ecd70773ab"
+    }
+  }, {
+    "fullUrl": "Observation/5c64a2e706d901e418c6f2ed4635532360696826d2b40b013f3bfa445b44c866",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/study-inclusion-covid-19" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "637972a35a0e816959e7495bdc023ac87fd6ca6635f49eb7fc0b10a386986d0a",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "02",
+          "display": "Study inclusion due to Covid-19"
+        } ],
+        "text": "Confirmed Covid-19 diagnosis as main reason for enrolment in the study"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373067005"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|5c64a2e706d901e418c6f2ed4635532360696826d2b40b013f3bfa445b44c866"
+    }
+  }, {
+    "fullUrl": "Observation/11e1f82c0abfc9865374bb4fe8d7e58dbb7b1a071fdd04a2296ffc72218b5df8",
+    "resource": {
+      "resourceType": "Observation",
+      "meta": {
+        "profile": [ "https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/interventional-clinical-trial-participation" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI",
+            "display": "Observation Instance Identifier"
+          } ]
+        },
+        "system": "https://mein.krankenhaus.de/fhir/NamingSystem/observationId",
+        "value": "53a6158f53c26a5dbf67b9dafe2bec9b662179b6bddf695967c79519ca69787c",
+        "assigner": {
+          "reference": "Organization/3a4f3433bce81181bad2d8e0b8fafccf7dc800bc06f29be73dcb38b750a48f9a"
+        }
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/ecrf-parameter-codes",
+          "code": "03",
+          "display": "Participation in interventional clinical trials"
+        } ],
+        "text": "Has the patient participated in one or more interventional clinical trials?"
+      },
+      "subject": {
+        "reference": "Patient/a9af24f2562c4acd0cb587e27c1e0cea8e38716b0526ce17f4b1bf10c4bbdc9d"
+      },
+      "_effectiveDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373066001"
+        } ]
+      }
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation",
+      "ifNoneExist": "identifier=https://mein.krankenhaus.de/fhir/NamingSystem/observationId|11e1f82c0abfc9865374bb4fe8d7e58dbb7b1a071fdd04a2296ffc72218b5df8"
+    }
+  } ]
+}
