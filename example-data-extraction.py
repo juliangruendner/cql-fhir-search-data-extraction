@@ -2,17 +2,39 @@ import requests
 import json
 import base64
 import uuid
-
+import csv
 
 
 def extract_subjects(subject_resp):
-
     pat_list = ""
 
     for entry in subject_resp['entry']:
         pat_list = f'{pat_list},{entry["item"]["reference"].split("/")[1]}'
 
     return pat_list[1:]
+
+def get_next_link(link_elem):
+    for elem in link_elem:
+        if elem['relation'] == 'next':
+            return elem['url']
+
+    return None
+
+
+def page_through_results_and_collect(resp):
+
+    result_list = []
+    next_link = get_next_link(resp.json()['link'])
+    result_list = list(map(lambda entry: {"patient": entry['resource']['subject']['reference'].split('/')[1], "code": entry['resource']['code']['coding'][0]['code'], "value": entry['resource']['valueQuantity']['value']}, resp.json()['entry']))
+
+    while next_link:
+
+        resp = requests.get(next_link)
+        result_list_temp = list(map(lambda entry: {"patient": entry['resource']['subject']['reference'].split('/')[1], "code": entry['resource']['code']['coding'][0]['code'], "value": entry['resource']['valueQuantity']['value']}, resp.json()['entry']))
+        next_link = get_next_link(resp.json()['link'])
+        result_list = result_list + result_list_temp
+
+    return result_list
 
 
 cql_input = '''
@@ -89,7 +111,7 @@ measure_template = '''{
 
 measure_config_template = '{"resourceType": "Parameters", "parameter": [{"name": "periodStart", "value": "2000"}, {"name": "periodEnd", "value": "2030"}, {"name": "measure", "value": "urn:uuid:49f4c7de-3320-4208-8e60-ecc0d8824e08"}, {"name": "reportType", "value": "subject-list"}]}'
 
-fhir_base_url= "http://localhost:8081/fhir"
+fhir_base_url = "http://localhost:8081/fhir"
 cql_base64 = base64.b64encode(cql_input.encode('ascii'))
 
 lib_uuid = f'urn:uuid:{str(uuid.uuid4())}'
@@ -137,7 +159,6 @@ print("---- END SUBJECT LIST ----")
 
 headers = {'Content-Type': "application/x-www-form-urlencoded"}
 
-
 print("Search for feature = weight (http://loinc.org|29463-7) > 10 for all patients and count them...")
 payload = {'code': 'http://loinc.org|29463-7', 'value': 'gt10', '_summary': 'count'}
 resp = requests.post(f'{fhir_base_url}/Observation/_search', data=payload)
@@ -151,6 +172,16 @@ print("Number of patients found:", resp.json()['total'])
 print("Search for feature = weight (http://loinc.org|29463-7) > 10 for our previously selected patients and print found resources (features)...")
 payload = {'code': 'http://loinc.org|29463-7', 'value': 'gt10', 'subject': subjects}
 resp = requests.post(f'{fhir_base_url}/Observation/_search', data=payload)
+
+result_list = page_through_results_and_collect(resp)
 print("------------------------ BEGIN RESULT LIST ------------------------")
-print(resp.json())
+print(json.dumps(result_list, indent=4, sort_keys=True))
 print("------------------------ END RESULT LIST ------------------------")
+
+
+keys = result_list[0].keys()
+
+with open('data-extraction-result.csv', 'w', newline='') as output_file:
+    dict_writer = csv.DictWriter(output_file, keys)
+    dict_writer.writeheader()
+    dict_writer.writerows(result_list)

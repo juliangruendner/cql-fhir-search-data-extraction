@@ -3,7 +3,7 @@ services:
   fhir-server:
     image: ghcr.io/num-codex/blaze:0.14
     environment:
-      BASE_URL: "http://fhir-server:8080"
+      BASE_URL: "http://localhost:8081"
       JAVA_TOOL_OPTIONS: ${CODEX_FHIR_SERVER_JVM_ARGS:--Xmx4g}
       LOG_LEVEL: debug
     ports:
